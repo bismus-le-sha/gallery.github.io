@@ -1,0 +1,57 @@
+body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+}
+
+.canvas-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  width: 300px; /* Базовая ширина */
+  height: auto; /* Автоматическая высота */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+canvas {
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.frame-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.caption {
+  position: absolute;
+  bottom: 10px; /* Расстояние от нижней границы контейнера */
+  bottom: -40px; /* Расположение справа от контейнера */
+  width: 180px; /* Ширина подписи */
+  background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный фон */
+  color: #333;
+  font-size: 14px;
+  text-align: center;
+  padding: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
