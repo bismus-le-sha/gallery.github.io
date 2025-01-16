@@ -7,42 +7,89 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="canvas-container">
-      <img class="frame-image" src="images/frame.png" alt="Frame" />
-      <img class="gallery-image" src="images/kiss.jpg" alt="Gallery Image" />
-      <div class="caption">"The Kiss" by Gustav Klimt, 1907-1908</div>
+    <audio autoplay loop>
+      <source src="/music/allways forever - slowed.wav" type="audio/wav" />
+    </audio>
+    <div class="camera">
+      <div class="frame">
+        <div class="item">
+          <div class="layer l1">
+            <img src="images/text.png" class="header-img" />
+          </div>
+          <div class="layer l2">
+            <img src="images/text.png" class="header-img" />
+          </div>
+          <div class="text">
+            Ты — причина, по которой моя жизнь обрела особый блеск. Каждый день
+            с тобой напоминает, как прекрасен этот мир. Твоя улыбка — словно луч
+            солнца, согревающий мое сердце, а твой смех наполняет мою душу
+            теплом, которое я никогда не хочу терять. Когда я смотрю на тебя, я
+            понимаю, что любовь — это не только слова, а действия, моменты и
+            чувства, которые невозможно передать до конца. Ты вдохновляешь меня
+            становиться лучше, учишь видеть красоту в мелочах и ценить то, что
+            действительно важно. Каждое мгновение, проведенное рядом с тобой,
+            для меня дороже любых сокровищ. Я до сих пор вспоминаю день, когда
+            встретил тебя, с благодарностью, что сделал самый правильный выбор в
+            жизни. Эти два года стали началом невероятного пути, который я хочу
+            пройти только с тобой. Спасибо за каждую улыбку, за каждое "я люблю
+            тебя", за то, что ты делаешь меня счастливым и даришь ощущение дома,
+            где бы мы ни были. Ты — мое вдохновение, моя опора и моя любовь. С
+            тобой я верю, что впереди нас ждет только лучшее.
+          </div>
+        </div>
+        <div class="item">
+          <div class="layer l1">
+            <img src="images/text_hadow.png" class="header-img" />
+          </div>
+          <div class="layer l2">
+            <img src="images/text.png" class="header-img" />
+          </div>
+          <div class="gallery">
+            <div class="canvas-container">
+              <img class="frame-image" src="images/frame.png" alt="Frame" />
+              <img
+                class="gallery-image"
+                src="images/kiss.jpg"
+                alt="Gallery Image"
+              />
+              <div class="caption">
+                Когда ты рядом я понимаю что такое любовь
+              </div>
+            </div>
+            <div class="canvas-container" id="canvas-container">
+              <canvas class="scratch-canvas"></canvas>
+              <img
+                class="gallery-image"
+                id="hiddenImage"
+                src="images/bottom.jpg"
+                alt="Hidden Layer"
+              />
+              <img class="frame-image" src="images/frame.png" alt="Frame" />
+              <div class="caption">С тобой одежда кажется лишней</div>
+            </div>
+            <div class="canvas-container">
+              <img class="frame-image" src="images/frame.png" alt="Frame" />
+              <img
+                class="gallery-image"
+                src="images/happy.jpg"
+                alt="Gallery Image"
+              />
+              <div class="caption">Ты заставляешь меня улыбаться</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <script type="text/javascript">
+      let cont = document.querySelector(".camera");
+      let layer = document.querySelectorAll(".layer");
 
-    <div class="canvas-container">
-      <img class="frame-image" src="images/frame.png" alt="Frame" />
-      <img class="gallery-image" src="images/kiss.jpg" alt="Gallery Image" />
-      <div class="caption">"Another Artwork Title" by Artist Name, Year</div>
-    </div>
-
-    <div class="canvas-container" id="canvas-container">
-      <canvas class="scratch-canvas"></canvas>
-      <img
-        class="gallery-image"
-        id="hiddenImage"
-        src="images/bottom.jpg"
-        alt="Hidden Layer"
-      />
-      <img class="frame-image" src="images/frame.png" alt="Frame" />
-      <div class="caption">"Hidden Artwork Title" by Artist Name, Year</div>
-    </div>
-
-    <div class="canvas-container">
-      <img class="frame-image" src="images/frame.png" alt="Frame" />
-      <img class="gallery-image" src="images/kiss.jpg" alt="Gallery Image" />
-      <div class="caption">"Another Artwork Title" by Artist Name, Year</div>
-    </div>
-
-    <div class="canvas-container">
-      <img class="frame-image" src="images/frame.png" alt="Frame" />
-      <img class="gallery-image" src="images/kiss.jpg" alt="Gallery Image" />
-      <div class="caption">"Another Artwork Title" by Artist Name, Year</div>
-    </div>
-
+      cont.onscroll = function () {
+        let X = cont.scrollTop;
+        layer[0].style.left = X / 4 + "px";
+        layer[1].style.left = X / 8 + "px";
+      };
+    </script>
     <script src="stratch.js"></script>
   </body>
 </html>
